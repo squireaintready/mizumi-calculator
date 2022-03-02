@@ -1,0 +1,28 @@
+.form{
+  display: grid;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1rem 4rem;
+  min-width: 15rem;
+}
+
+.employeesCounterContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.boolBusgirls{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.MuiOutlinedInput-input{
+  width: 4rem !important;
+  text-align: center;
+}

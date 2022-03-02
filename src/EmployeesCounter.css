@@ -1,0 +1,18 @@
+/* MuiInput-root{
+  width: 2rem !important;
+} */
+
+.counterContainer{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiInput-input{
+  text-align: center;
+  width: 4rem !important;
+}
+
+.MuiSvgIcon-root{
+  margin-top: 1rem;
+}

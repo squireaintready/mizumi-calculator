@@ -1,0 +1,14 @@
+.resultsContainer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 50px;
+  margin-top: 2rem;
+  padding: 2rem 2.8rem;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.resultsRow{
+  display: flex;
+  justify-content: space-between !important;
+}
