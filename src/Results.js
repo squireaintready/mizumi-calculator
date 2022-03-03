@@ -1,9 +1,9 @@
 // STYLES
 import "./Results.css";
 
-const Results = ({ data }) => {
+const Results = ({ data, toggleResults }) => {
   return (
-    <div className="resultsContainer">
+    <div className={toggleResults ? "resultsContainer" : "hideResultsContainer"}>
       <span></span>
       <h3>Paid</h3>
       <h3>Total</h3>
