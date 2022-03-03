@@ -82,7 +82,7 @@ const Form = ({handleDataChange}) => {
             onChange={handleCashChange}
             inputProps={{ inputMode: 'numeric' }}
           />
-          <Button type='submit' variant="contained" size="small">calculate</Button>
+          <Button type='submit' variant="contained">calculate</Button>
         </div>
       </form>
     </div>
