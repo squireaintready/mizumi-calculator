@@ -16,21 +16,21 @@ const Results = ({ data }) => {
         <>
           <h4>Busboy</h4>
           <p>{data.bussers.pay}</p>
-          <p>{data.bussers.pay * data.servers.count}</p>
+          <p>{data.bussers.pay * data.bussers.count}</p>
         </>
       ) : null}
       {data.paola.pay > 0 ? (
         <>
           <h4>Paola</h4>
           <p>{data.paola.pay}</p>
-          <p>{data.paola.pay * data.servers.count}</p>
+          <p>{data.paola.pay}</p>
         </>
       ) : null}
       {data.meat.pay > 0 ? (
         <>
           <h4>Meat</h4>
           <p>{data.meat.pay}</p>
-          <p>{data.meat.pay * data.servers.count}</p>
+          <p>{data.meat.pay}</p>
         </>
       ) : null}
       {data.toReturn > 0 ? (
