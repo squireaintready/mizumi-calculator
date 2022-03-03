@@ -30,7 +30,7 @@ const EmployeesCounter = ({label, numE, handleChange}) => {
   return (
     <div className='counterContainer'>
       <RemoveCircleIcon color='primary' onClick={decrement}/>
-        <TextField color="primary" label={label} onChange={handleOnChange} value={numE > 0 ? numE : ""} variant="standard"/>
+        <TextField color="primary" inputProps={{ inputMode: 'numeric' }} label={label} onChange={handleOnChange} value={numE > 0 ? numE : ""} variant="standard"/>
       <AddCircleIcon color='primary' onClick={increment}/>
     </div>
   )
