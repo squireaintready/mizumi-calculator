@@ -12,8 +12,8 @@
 
 .moneyGrowth{
   position:absolute;
+  bottom:1rem !important;
   left: 0px;
-  bottom:10px;
 }
 
 /* This fires as soon as the element enters the DOM*/
