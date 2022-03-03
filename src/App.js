@@ -20,9 +20,9 @@ function App() {
   let modCash = 0;
 
   const calculate = (s, b, pao, meat, cash) => {
-    totalCount = s + (b * data?.bussers.percentage) + (pao * data?.paola.percentage) + (meat * data?.meat.percentage);
-    totalCount = s + (b * data?.bussers.percentage) + (pao * data?.paola.percentage) + (meat * data?.meat.percentage);
-    serverPay = s > 0 ? Math.ceil(cash / totalCount) : 0;
+    totalCount = s + (b * data?.bussers.percentage) + (data?.paola.percentage) + (data?.meat.percentage);
+    serverPay = Math.ceil(cash / totalCount);
+    console.log(totalCount)
     paolaPay = pao > 0 ? Math.floor(serverPay * data.paola.percentage) : 0;
     cashPostServe = cash - ((serverPay * s) + paolaPay)
     busserPay = b > 0 ? Math.floor(cashPostServe / (b + meat)) : 0;
@@ -55,7 +55,7 @@ function App() {
         percentage: .15,
         pay: meatPay
       },
-      toReturn: cash-serverPay,
+      toReturn: busserPay * b + paolaPay + meatPay,
       remainder: modCash
     })
   }

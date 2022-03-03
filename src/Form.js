@@ -42,7 +42,7 @@ const Form = ({handleDataChange}) => {
       numS,
       numB,
       isPaola ? 1 : 0,
-      isMeat ? .5 : 0,
+      isMeat ? 1 : 0,
       cash
     )
   }
