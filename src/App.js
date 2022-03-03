@@ -43,7 +43,7 @@ function App() {
       bussers: {
         count: b,
         percentage: 0.3,
-        pay: 0,
+        pay: busserPay,
       },
       paola: {
         count: pao,
