@@ -11,6 +11,7 @@
 .MuiInput-input{
   text-align: center;
   width: 4rem !important;
+  color: white ! important;
 }
 
 .MuiSvgIcon-root{

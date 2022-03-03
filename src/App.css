@@ -4,9 +4,16 @@
 
 .App{
   height: 100vh;
-  background-color: aquamarine;
-}
+  background: rgb(4,0,79);
+background: linear-gradient(221deg, rgba(4,0,79,1) 5%, rgba(13,17,143,1) 13%, rgba(79,91,180,1) 27%, rgba(5,100,120,1) 53%, rgba(2,26,31,1) 66%, rgba(7,142,171,1) 90%, rgba(5,100,120,1) 100%);
 
+
+  /* background: rgb(24,17,145); */
+/* background: linear-gradient(221deg, rgba(24,17,145,1) 1%, rgba(12,16,124,1) 15%, rgba(79,91,180,1) 32%, rgba(5,100,120,1) 54%); */
+  
+/* background: rgb(24,17,145); */
+  /* background: linear-gradient(221deg, rgba(24,17,145,1) 1%, rgba(12,16,124,1) 37%, rgba(79,91,180,1) 62%, rgba(5,100,120,1) 85%);} */
+}
 .container{
   display: flex;
   flex-direction: column;

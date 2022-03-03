@@ -29,9 +29,9 @@ const EmployeesCounter = ({label, numE, handleChange}) => {
 
   return (
     <div className='counterContainer'>
-      <RemoveCircleIcon color='warning' fontSize='small' onClick={decrement}/>
-        <TextField label={label} onChange={handleOnChange} value={numE > 0 ? numE : ""} variant="standard"/>
-      <AddCircleIcon color='success' fontSize='small' onClick={increment}/>
+      <RemoveCircleIcon color='primary' onClick={decrement}/>
+        <TextField color="primary" label={label} onChange={handleOnChange} value={numE > 0 ? numE : ""} variant="standard"/>
+      <AddCircleIcon color='primary' onClick={increment}/>
     </div>
   )
 }

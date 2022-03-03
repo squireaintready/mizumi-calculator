@@ -1,6 +1,9 @@
 .EmployeesBoolContainer{
-  /* display: flex;
-  border: 1px dotted gray;
+  color: white;
+  padding-left: 12px;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
+  border: 1px solid lightcyan;
+  border-radius: 4px;
 }

@@ -9,7 +9,6 @@ function App() {
   }, [])
 
   const [data, setData] = useState({})
-  const [modCash, setModCash] = useState(0)
 
   let serverPay = 0;
   let busserPay = 0;
@@ -17,6 +16,8 @@ function App() {
   let meatPay = 0;
   let totalCount = 0;
   let cashPostServe = 0;
+  let totalPaid = 0;
+  let modCash = 0;
 
   const calculate = (s, b, pao, meat, cash) => {
     totalCount = s + (b * data?.bussers.percentage) + (pao * data?.paola.percentage) + (meat * data?.meat.percentage);
@@ -26,8 +27,8 @@ function App() {
     cashPostServe = cash - ((serverPay * s) + paolaPay)
     busserPay = b > 0 ? Math.floor(cashPostServe / (b + meat)) : 0;
     meatPay = meat > 0 ? Math.ceil(busserPay / 2) : 0;
-    let totalPaid = serverPay * s + busserPay * b + paolaPay + meatPay;
-    setModCash(cash - totalPaid);
+    totalPaid = serverPay * s + busserPay * b + paolaPay + meatPay;
+    modCash = cash - totalPaid;
   }
 
   const handleDataChange = (s, b, pao, meat, cash) => {
@@ -53,7 +54,9 @@ function App() {
         count: meat,
         percentage: .15,
         pay: meatPay
-      }
+      },
+      toReturn: cash-serverPay,
+      remainder: modCash
     })
   }
 
@@ -91,7 +94,9 @@ const defaultData = {
     count: 0,
     percentage: .15,
     pay: 0
-  }
+  },
+  toReturn: 0,
+  remainder: 0
 };
 
 export default App;
