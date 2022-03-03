@@ -3,12 +3,16 @@ import "./App.css";
 import Form from "./Form";
 import Results from "./Results";
 
+import { CSSTransition } from 'react-transition-group';
+
 function App() {
   useEffect(() => {
-    setData(defaultData)
-  }, [])
+    setData(defaultData);
+  }, []);
 
-  const [data, setData] = useState({})
+  const [data, setData] = useState({});
+  const [show, setShow] = useState(false);
+  const [imageClasses, setImageClasses] = useState("d-none");
 
   let serverPay = 0;
   let busserPay = 0;
@@ -20,20 +24,22 @@ function App() {
   let modCash = 0;
 
   const calculate = (s, b, pao, meat, cash) => {
-    totalCount = s + (b * data?.bussers.percentage) + (data?.paola.percentage) + (data?.meat.percentage);
+    totalCount =
+      s +
+      b * data?.bussers.percentage +
+      data?.paola.percentage +
+      data?.meat.percentage;
     serverPay = Math.ceil(cash / totalCount);
-    console.log(totalCount)
     paolaPay = pao > 0 ? Math.floor(serverPay * data.paola.percentage) : 0;
-    cashPostServe = cash - ((serverPay * s) + paolaPay)
+    cashPostServe = cash - (serverPay * s + paolaPay);
     busserPay = b > 0 ? Math.floor(cashPostServe / (b + meat)) : 0;
     meatPay = meat > 0 ? Math.ceil(busserPay / 2) : 0;
     totalPaid = serverPay * s + busserPay * b + paolaPay + meatPay;
     modCash = cash - totalPaid;
-  }
+  };
 
   const handleDataChange = (s, b, pao, meat, cash) => {
-    calculate(s, b, pao, meat, cash)
-
+    calculate(s, b, pao, meat, cash);
     setData({
       servers: {
         count: s,
@@ -52,23 +58,43 @@ function App() {
       },
       meat: {
         count: meat,
-        percentage: .15,
-        pay: meatPay
+        percentage: 0.15,
+        pay: meatPay,
       },
       toReturn: busserPay * b + paolaPay + meatPay,
-      remainder: modCash
-    })
+      remainder: modCash,
+    });
+    setShow(!show);
+  };
+
+  const hideImage = () => {
+    setImageClasses("d-none");
+  }
+  
+  const showImage = (node) => {
+      setImageClasses("d-block");
+      node.style.opacity = 0;
+  }
+  
+  const removeOpacity = (node) => {
+      node.style.opacity = 1;
   }
 
   return (
     <div className="App">
       <div className="container">
-        <Form handleDataChange={handleDataChange}/>
-        {data?.servers?.count > 0 
-        ? (
+        <Form handleDataChange={handleDataChange} />
+        <CSSTransition
+          in={show}
+          timeout={350}
+          onEnter={showImage}
+          onEntered={removeOpacity}
+          onExited={hideImage}
+          className={`animate__animated my-4 ${imageClasses}`}
+          unmountOnExit
+        >
           <Results data={data}/>
-        ):(null)}
-        {console.log(data)}
+        </CSSTransition>
       </div>
     </div>
   );
@@ -92,11 +118,11 @@ const defaultData = {
   },
   meat: {
     count: 0,
-    percentage: .15,
-    pay: 0
+    percentage: 0.15,
+    pay: 0,
   },
   toReturn: 0,
-  remainder: 0
+  remainder: 0,
 };
 
 export default App;
