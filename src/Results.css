@@ -58,11 +58,11 @@
 }
 
 .fade-in-text {
-  animation: fadeIn linear 7s;
-  -webkit-animation: fadeIn linear 3s;
-  -moz-animation: fadeIn linear 3s;
-  -o-animation: fadeIn linear 3s;
-  -ms-animation: fadeIn linear 3s;
+  animation: fadeIn linear 8s;
+  -webkit-animation: fadeIn linear 8s;
+  -moz-animation: fadeIn linear 8s;
+  -o-animation: fadeIn linear 8s;
+  -ms-animation: fadeIn linear 8s;
 }
 
 @keyframes fadeIn {
