@@ -87,13 +87,13 @@ function App() {
         <Form handleDataChange={handleDataChange} />
         <Results data={data} toggleResults={toggleResults} />
       </div>
-      <div className='moneyGrowth'>
+      {/* <div className='moneyGrowth'>
         <Lottie
           options={moneyGrowthOptions}
           height={cashLotteDimensions}
           width={cashLotteDimensions}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
