@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+// CUSTOM COMPONENTS
 import Form from "./Form";
 import Results from "./Results";
 
+// STYLES
+import "./App.css";
+
+// LIBRARIES
 import { CSSTransition } from 'react-transition-group';
 
 function App() {

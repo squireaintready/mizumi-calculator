@@ -1,6 +1,4 @@
-import React from "react";
-
-import Grid from "@mui/material/Grid";
+// STYLES
 import "./Results.css";
 
 const Results = ({ data }) => {
@@ -50,21 +48,3 @@ const Results = ({ data }) => {
 };
 
 export default Results;
-
-// const data = {
-//   servers: {
-//     count: 5,
-//     percentage: 1,
-//     pay: 0,
-//   },
-//   paola: {
-//     count: 3,
-//     percentage: 0.4,
-//     pay: 0,
-//   },
-//   bussers: {
-//     count: 3.5,
-//     percentage: 0.3,
-//     pay: 0,
-//   },
-// };

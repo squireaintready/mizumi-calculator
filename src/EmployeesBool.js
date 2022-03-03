@@ -1,7 +1,8 @@
+// STYLES
 import './EmployeesBool.css'
-import React from 'react'
+
+// LIBRARIES
 import Switch from '@mui/material/Switch';
-import { cyan } from '@mui/material/colors';
 
 
 const EmployeesBool = ({label, isWorking, handleChange}) => {

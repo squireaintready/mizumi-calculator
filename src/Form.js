@@ -1,11 +1,15 @@
-import "./Form.css";
-import TextField from "@mui/material/TextField";
-import Button from '@mui/material/Button';
-import { cyan } from '@mui/material/colors';
-
 import React, { useState } from "react";
-import EmployeesCounter from "./EmployeesCounter";
+
+// STYLES
+import "./Form.css";
+
+// INTERNAL COMPONENTS
 import EmployeesBool from "./EmployeesBool";
+import EmployeesCounter from "./EmployeesCounter";
+
+// EXTERNAL COMPONENTS
+import Button from '@mui/material/Button';
+import TextField from "@mui/material/TextField";
 
 const Form = ({handleDataChange}) => {
   const [numS, setNumS] = useState(0);

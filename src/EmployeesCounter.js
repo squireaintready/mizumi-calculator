@@ -1,9 +1,11 @@
+// STYLES
 import './EmployeesCounter.css'
 
-import React from 'react'
+// ICONS
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import Input from '@mui/material/Input';
+
+// EXTERNAL COMPONENTS
 import TextField from '@mui/material/TextField';
 
 const EmployeesCounter = ({label, numE, handleChange}) => {
