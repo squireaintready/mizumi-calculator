@@ -11,10 +11,10 @@
 }
 
 .container{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 /* This fires as soon as the element enters the DOM*/
