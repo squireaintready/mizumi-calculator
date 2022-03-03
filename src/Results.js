@@ -9,40 +9,40 @@ const Results = ({ data }) => {
       <span></span>
       <h3>Paid</h3>
       <h3>Total</h3>
-      <h4>Servers</h4>
-      <p>{data.servers.pay}</p>
-      <p>{data.servers.pay * data.servers.count}</p>
+      <h4 className = "fade-in-text">Servers</h4>
+      <p className = "fade-in-text">{data.servers.pay}</p>
+      <p className = "fade-in-text">{data.servers.pay * data.servers.count}</p>
       {data.bussers.pay > 0 ? (
         <>
-          <h4>Busboy</h4>
-          <p>{data.bussers.pay}</p>
-          <p>{data.bussers.pay * data.bussers.count}</p>
+          <h4 className = "fade-in-text">Busboy</h4>
+          <p className = "fade-in-text">{data.bussers.pay}</p>
+          <p className = "fade-in-text">{data.bussers.pay * data.bussers.count}</p>
         </>
       ) : null}
       {data.paola.pay > 0 ? (
         <>
-          <h4>Paola</h4>
-          <p>{data.paola.pay}</p>
-          <p>{data.paola.pay}</p>
+          <h4 className = "fade-in-text">Paola</h4>
+          <p className = "fade-in-text">{data.paola.pay}</p>
+          <p className = "fade-in-text">{data.paola.pay}</p>
         </>
       ) : null}
       {data.meat.pay > 0 ? (
         <>
-          <h4>Meat</h4>
-          <p>{data.meat.pay}</p>
-          <p>{data.meat.pay}</p>
+          <h4 className = "fade-in-text">Meat</h4>
+          <p className = "fade-in-text">{data.meat.pay}</p>
+          <p className = "fade-in-text">{data.meat.pay}</p>
         </>
       ) : null}
       {data.toReturn > 0 ? (
         <>
-          <h4>Return</h4>
-          <p></p>
-          <p>{data.toReturn}</p>
+          <h4 className = "fade-in-text">Return</h4>
+          <p className = "fade-in-text"></p>
+          <p className = "fade-in-text">{data.toReturn}</p>
         </>
       ) : null}
         <>
-          <h4>Remainder</h4>
-          <p></p>
+          <h4 className = "fade-in-text">Remainder</h4>
+          <p className = "fade-in-text"></p>
           <p className='redText'>{data.remainder}</p>
         </>
     </div>
