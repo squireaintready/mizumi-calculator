@@ -10,11 +10,10 @@
   place-items: center;
 }
 
-.container{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+.moneyGrowth{
+  position:absolute;
+  left: 0px;
+  bottom:10px;
 }
 
 /* This fires as soon as the element enters the DOM*/
@@ -50,4 +49,19 @@
   color: transparent;
   background-color: #5a564c;
   transition: all 200ms;
+  }
+
+  .rotate-in {
+    animation: myAnim 1s ease 0s 1 normal forwards;
+  }
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(-250px) rotate(-200deg);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
   }

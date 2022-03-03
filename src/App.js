@@ -6,17 +6,27 @@ import Results from "./Results";
 // STYLES
 import "./App.css";
 
-// LIBRARIES
-import { CSSTransition } from 'react-transition-group';
+// EXTERNAL LIBRARIES
+import Lottie from "react-lottie";
+import moneyGrowthAnimation from "./moneyGrowth.json";
 
 function App() {
-  useEffect(() => {
-    setData(defaultData);
-  }, []);
+  useEffect(() => {}, []);
 
-  const [data, setData] = useState({});
-  const [show, setShow] = useState(false);
-  const [imageClasses, setImageClasses] = useState("d-none");
+  const moneyGrowthOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: moneyGrowthAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const cashLotteDimensions = window.innerHeight / 4;
+  const cardLotteDimensions = window.innerHeight / 6;
+
+  const [data, setData] = useState(defaultData);
+  const [toggleResults, setToggleResults] = useState(false);
 
   let serverPay = 0;
   let busserPay = 0;
@@ -33,10 +43,10 @@ function App() {
       b * data?.bussers.percentage +
       data?.paola.percentage +
       data?.meat.percentage;
-    serverPay = Math.ceil(cash / totalCount);
+    serverPay = s > 0 ? Math.ceil(cash / totalCount) : 0;
     paolaPay = pao > 0 ? Math.floor(serverPay * data.paola.percentage) : 0;
     cashPostServe = cash - (serverPay * s + paolaPay);
-    busserPay = b > 0 ? Math.floor(cashPostServe / (b + meat)) : 0;
+    busserPay = b > 0 ? Math.floor(cashPostServe / (b + meat / 2)) : 0;
     meatPay = meat > 0 ? Math.ceil(busserPay / 2) : 0;
     totalPaid = serverPay * s + busserPay * b + paolaPay + meatPay;
     modCash = cash - totalPaid;
@@ -68,37 +78,21 @@ function App() {
       toReturn: busserPay * b + paolaPay + meatPay,
       remainder: modCash,
     });
-    setShow(!show);
+    setToggleResults(!toggleResults);
   };
-
-  const hideImage = () => {
-    setImageClasses("d-none");
-  }
-  
-  const showImage = (node) => {
-      setImageClasses("d-block");
-      node.style.opacity = 0;
-  }
-  
-  const removeOpacity = (node) => {
-      node.style.opacity = 1;
-  }
 
   return (
     <div className="App">
-      <div className="container">
+      <div className="rotate-in">
         <Form handleDataChange={handleDataChange} />
-        <CSSTransition
-          in={show}
-          timeout={350}
-          onEnter={showImage}
-          onEntered={removeOpacity}
-          onExited={hideImage}
-          className={`animate__animated my-4 ${imageClasses}`}
-          unmountOnExit
-        >
-          <Results data={data}/>
-        </CSSTransition>
+        <Results data={data} toggleResults={toggleResults} />
+      </div>
+      <div className='moneyGrowth'>
+        <Lottie
+          options={moneyGrowthOptions}
+          height={cashLotteDimensions}
+          width={cashLotteDimensions}
+        />
       </div>
     </div>
   );
